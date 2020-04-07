@@ -6,3 +6,5 @@ MIN_BOARD_WIDTH = 80
 MAX_GENERATION = 10000
 
 STATUS_SYMBOL = {'dead': '.', 'alive': '#'}
+
+TIME_INTERVAL = 1
