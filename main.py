@@ -40,6 +40,7 @@ class LifeGame:
             cnt = 0
             print("==============================Init Grid==============================")
             viewer.print_grid(grid.board)
+            time.sleep(TIME_INTERVAL)
             while cnt < MAX_GENERATION:
                 cnt += 1
                 print("==============================Generation {}==============================".format(cnt))
