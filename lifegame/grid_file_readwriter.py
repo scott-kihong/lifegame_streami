@@ -47,7 +47,7 @@ class GridFileReadWriter:
                         f.write(STATUS_SYMBOL['alive'])
                     else:
                         f.write(STATUS_SYMBOL['dead'])
-                f.write('\r')
+                f.write('\r\n')
 
     def _proc_read_line(self, idx, line):
         if idx == 0:
@@ -57,16 +57,16 @@ class GridFileReadWriter:
                                         It should be consist of [num_rows][num_cols]""")
             try:
                 return {'board_size': (int(board_size[0]), int(board_size[1]))}
-            except ValueError as value_error:
-                raise value_error("Board size should be integer numbers. Check your file {}".format(self.filename))
+            except ValueError:
+                raise ValueError("Board size should be integer numbers. Check your file {}".format(self.filename))
         elif idx == 1:
             try:
                 return {'cell_size': (int(line))}
-            except ValueError as value_error:
-                raise value_error("Cell size should be integer numbers. Check your file {}".format(self.filename))
+            except ValueError:
+                raise ValueError("Cell size should be integer numbers. Check your file {}".format(self.filename))
         else:
             cell_pos = line.split(' ')
             try:
                 return {'cell_pos': (int(cell_pos[0]), int(cell_pos[1]))}
-            except ValueError as value_error:
-                raise value_error("Cell pos should be integer numbers. Check your file {}".format(self.filename))
+            except ValueError:
+                raise ValueError("Cell pos should be integer numbers. Check your file {}".format(self.filename))
