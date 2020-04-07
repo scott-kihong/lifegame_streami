@@ -1,5 +1,5 @@
 from lifegame.cell import Cell
-from constants import STATUS_SYMBOL
+from lifegame.constants import STATUS_SYMBOL
 from lifegame.exceptions import ValueInitError
 
 
