@@ -22,6 +22,6 @@ Game of life를 구현하기 위해 총 네 개의 클래스를 구분하여 작
 1. git clone https://github.com/scott-kihong/lifegame_streami.git
 2. cd lifegame_streami
 3. Run game!
-    - python main.py
-    - python main.py generation_files/plus.txt
-    - python main.py generation_files/plus.txt {n_generation}
+    - python3 main.py
+    - python3 main.py generation_files/plus.txt
+    - python3 main.py generation_files/plus.txt {n_generation}
