@@ -1,4 +1,5 @@
 from lifegame.cell import Cell
+from constants import STATUS_SYMBOL
 from lifegame.exceptions import ValueInitError
 
 
@@ -34,6 +35,19 @@ class GridFileReadWriter:
                 raise e
 
         return row_size, col_size
+
+    def dump_grid(self, board, filename=None):
+        if filename is None:
+            filename = self.filename
+
+        with open('generation_dumps/{}'.format(filename), 'w') as f:
+            for row in range(len(board)):
+                for col in range(len(board[row])):
+                    if board[row][col].get_status():
+                        f.write(STATUS_SYMBOL['alive'])
+                    else:
+                        f.write(STATUS_SYMBOL['dead'])
+                f.write('\r')
 
     def _proc_read_line(self, idx, line):
         if idx == 0:
