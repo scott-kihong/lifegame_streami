@@ -32,6 +32,14 @@ class Grid:
 
         return self.board
 
+    def dump_grid(self, gen_stage):
+        grid_file_reader = GridFileReadWriter('gen_{}.txt'.format(gen_stage))
+        cnt = gen_stage
+        while cnt > 0:
+            self.update_grid()
+            cnt -= 1
+        grid_file_reader.dump_grid(self.board)
+
     def update_board(self):
         new_board = copy.deepcopy(self.board)
 
