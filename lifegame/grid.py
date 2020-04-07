@@ -40,7 +40,7 @@ class Grid:
             cnt -= 1
         grid_file_reader.dump_grid(self.board)
 
-    def update_board(self):
+    def update_grid(self):
         new_board = copy.deepcopy(self.board)
 
         for row in range(self.row_size):
